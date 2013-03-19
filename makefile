@@ -3,7 +3,7 @@ CXXFLAGS=-std=c++0x
 DFLAGS=-DDEBUG
 LIB=
 OBJ=sqlite3.o
-SRC=hello.cpp
+SRC=main.cpp
 
 all: debug
 
