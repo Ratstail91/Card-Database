@@ -1,4 +1,4 @@
-CC=g++
+RM=del
 CXXFLAGS=-std=c++0x
 DFLAGS=-DDEBUG
 LIB=
@@ -8,13 +8,13 @@ SRC=main.cpp
 all: debug
 
 release: $(OBJ)
-	$(CC) $(CXXFLAGS) $(SRC) $(OBJ) $(LIB)
+	$(CXX) $(CXXFLAGS) $(SRC) $(OBJ) $(LIB)
 
 debug: $(OBJ)
-	$(CC) $(CXXFLAGS) $(DFLAGS) $(SRC) $(OBJ) $(LIB)
+	$(CXX) $(CXXFLAGS) $(DFLAGS) $(SRC) $(OBJ) $(LIB)
 
 clean:
-	del *.o *.exe *.db
+	$(RM) *.o *.exe *.db
 
 sqlite3.o:
-	gcc -c sqlite3.c
+	$(CC) -c sqlite3.c
