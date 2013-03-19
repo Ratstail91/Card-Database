@@ -1,0 +1,49 @@
+Commands:
+	Search - search based on certain specifications
+	New - add a new card to the database
+	Update - update information on an existing card
+	Delete - remove a card from the database
+	Quit - exit the application
+
+Search:
+	request commands (the conditional statements used by "WHERE"?)
+	for each card:
+		list each important field, and colour the mana field...
+
+New:
+	collect data on a certain card
+	input fields:
+		card_name
+		mana_cost (XC)
+		power
+		toughness
+	check correctness with the user
+	verify that this card does not already exist in the database (name)
+	generate complete dataset
+	card dataset:
+		internal_id
+		name (including caps & punctuation)
+		mana_cost
+		converted_mana_cost
+		colour
+		power
+		toughness
+		quantity
+		foil_quantity
+		tags
+		notes
+	enter the card into the database
+	move to the update command
+
+Update:
+	this can only change quantities of cards
+	search for a card by name or internal id
+	if the card can't be found
+		show an error and exit
+	get the new values
+	update the database
+
+Delete:
+	search for a card by name or internal id
+	verify with the user that they want to delete this card
+	delete the card
