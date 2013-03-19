@@ -1,6 +1,7 @@
 #include "sqlite3.h"
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -12,15 +13,50 @@ int main(int, char**) {
 		return 1;
 	}
 
-	cout << "Program is operating correctly." << endl;
+	bool running = true;
+	string input;
 
-#ifdef DEBUG
-	cout << "Debug check complete." << endl;
-#endif
+	cout << "Card Database by Kayne Ruse" << endl;
 
-#ifdef FOOBAR
-	cout << "Foobar check complete." << endl;
-#endif
+	while(running) {
+		cout << "Choose an option: [S]earch, [N]ew, [U]pdate, [D]elete or [Q]uit?" << endl;
+		cout << ">>";
+		getline(cin, input);
+
+		switch(input[0]) {
+			case 's':
+			case 'S':
+				cerr << "Feature unimplemented" << endl;
+			break;
+
+			case 'n':
+			case 'N':
+				cerr << "Feature unimplemented" << endl;
+			break;
+
+			case 'u':
+			case 'U':
+				cerr << "Feature unimplemented" << endl;
+			break;
+
+			case 'd':
+			case 'D':
+				cerr << "Feature unimplemented" << endl;
+			break;
+
+			case 'q':
+			case 'Q':
+				running = false;
+			break;
+
+			default:
+				cerr << "Unknown command, try again" << endl;
+		}
+
+		cout << endl;
+	}
+
+	cout << "Closing application" << endl;
 
 	sqlite3_close(db);
 	return 0;
