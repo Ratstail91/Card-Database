@@ -1,5 +1,4 @@
-RM=del
-CXXFLAGS=-std=c++0x
+CXXFLAGS+=-std=c++0x
 DFLAGS=-DDEBUG
 LIB=
 OBJ=sqlite3.o
@@ -15,6 +14,3 @@ debug: $(OBJ)
 
 clean:
 	$(RM) *.o *.exe *.db
-
-sqlite3.o:
-	$(CC) -c sqlite3.c
