@@ -5,6 +5,12 @@ Commands:
 	Delete - remove a card from the database
 	Quit - exit the application
 
+Startup:
+	Open database, and make sure there are no errors
+	if the card tables are not in the database
+		check with the user that it's ok to make a new database
+		make the database (standard tables)
+
 Search:
 	request commands (the conditional statements used by "WHERE"?)
 	for each card:
