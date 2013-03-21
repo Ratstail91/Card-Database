@@ -1,26 +1,27 @@
 #include "operations.h"
 
-#include "sqlite3.h"
-
 #include "console_colors.h"
+#include "counter.h"
+
+#include "sqlite3.h"
 
 #include <iostream>
 #include <iomanip>
+#include <string>
 
 using namespace std;
 
-void Search(sqlite3*) {
+int New(sqlite3*) {
 	cerr << "Feature unimplemented" << endl;
+	return 0;
 }
 
-void New(sqlite3*) {
+int Update(sqlite3*) {
 	cerr << "Feature unimplemented" << endl;
+	return 0;
 }
 
-void Update(sqlite3*) {
+int Delete(sqlite3*) {
 	cerr << "Feature unimplemented" << endl;
-}
-
-void Delete(sqlite3*) {
-	cerr << "Feature unimplemented" << endl;
+	return 0;
 }

@@ -3,10 +3,10 @@
 
 #include "sqlite3.h"
 
-void Search(sqlite3*);
-void New(sqlite3*);
-void Update(sqlite3*);
-void Delete(sqlite3*);
+int Search(sqlite3*);
+int New(sqlite3*);
+int Update(sqlite3*);
+int Delete(sqlite3*);
 
 #define PROMPT ">>"
 

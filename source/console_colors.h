@@ -1,6 +1,10 @@
 #ifndef CONSOLECOLORS_H_
 #define CONSOLECOLORS_H_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define FG_BLACK 0x0
 #define FG_BLUE 0x1
 #define FG_GREEN 0x2
@@ -40,20 +44,10 @@
 
 #define CONSOLE_DEFAULT (FG_DEFAULT|BG_DEFAULT)
 
-#if defined(_WIN32)
+extern void ccset(unsigned char);
 
-#include <windows.h>
-
-void ccset(unsigned char color) {
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+#ifdef __cplusplus
 }
-
-#else //unknown platform
-
-#pragma message("This module has not been implemented for this platform/compiler")
-
-void ccset(unsigned char) {}; //dummy
-
-#endif //platform
+#endif
 
 #endif //CONSOLECOLORS_H_

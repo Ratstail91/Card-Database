@@ -1,8 +1,8 @@
 CXXFLAGS+=-std=c++0x -static
 DFLAGS=-DDEBUG
 LIB=
-OBJ=sqlite3.o
-SRC=main.cpp operations.cpp
+OBJ=sqlite3.o console_colors.o
+SRC=main.cpp operations.cpp search.cpp
 
 all: debug
 
