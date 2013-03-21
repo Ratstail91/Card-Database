@@ -13,7 +13,7 @@ debug: $(OBJ)
 	$(CXX) $(CXXFLAGS) $(DFLAGS) $(SRC) $(OBJ) $(LIB)
 
 clean:
-	$(RM) *.o *.exe *.db
+	-$(RM) *.o *.exe *.db
 
 shell: $(OBJ)
 	$(CC) $(CFLAGS) -o sqlite3 shell.c $(OBJ)
