@@ -1,5 +1,7 @@
 #include "sqlite3.h"
 
+#include "operations.h"
+
 #include <iostream>
 #include <string>
 
@@ -8,40 +10,42 @@ using namespace std;
 int main(int, char**) {
 	sqlite3* db;
 
-	if (sqlite3_open("magiccards.db",&db) != SQLITE_OK) {
+	if (sqlite3_open("cards.db",&db) != SQLITE_OK) {
 		cerr << "Error: Failed to open database; " << sqlite3_errmsg(db) << endl;
 		return 1;
 	}
 
+	cout << "Card Database by Kayne Ruse" << endl;
+
+	//TODO: run initial startup scripts
+
 	bool running = true;
 	string input;
 
-	cout << "Card Database by Kayne Ruse" << endl;
-
 	while(running) {
 		cout << "Choose an option: [S]earch, [N]ew, [U]pdate, [D]elete or [Q]uit?" << endl;
-		cout << ">>";
+		cout << PROMPT;
 		getline(cin, input);
 
 		switch(input[0]) {
 			case 's':
 			case 'S':
-				cerr << "Feature unimplemented" << endl;
+				Search(db);
 			break;
 
 			case 'n':
 			case 'N':
-				cerr << "Feature unimplemented" << endl;
+				New(db);
 			break;
 
 			case 'u':
 			case 'U':
-				cerr << "Feature unimplemented" << endl;
+				Update(db);
 			break;
 
 			case 'd':
 			case 'D':
-				cerr << "Feature unimplemented" << endl;
+				Delete(db);
 			break;
 
 			case 'q':

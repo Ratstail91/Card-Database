@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int search(void* first, int columnCount, char** entries, char** columnNames) {
+int search_callback(void* first, int columnCount, char** entries, char** columnNames) {
 	//only a max of 5 columns accepted
 	if (columnCount > 5) {
 		return 1;
@@ -37,7 +37,7 @@ int main(int, char**) {
 	}
 
 	bool first = true;
-	sqlite3_exec(db, "SELECT card_name, mana_cost, power, toughness FROM card_list", search, (void*)&first, &errmsg);
+	sqlite3_exec(db, "SELECT card_name, mana_cost, power, toughness FROM card_list", &search_callback, (void*)&first, &errmsg);
 
 	if (errmsg) {
 		cerr << "Failed to execute; " << errmsg << endl;

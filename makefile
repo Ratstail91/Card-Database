@@ -1,8 +1,8 @@
-CXXFLAGS+=-std=c++0x
+CXXFLAGS+=-std=c++0x -static
 DFLAGS=-DDEBUG
 LIB=
 OBJ=sqlite3.o
-SRC=main.cpp
+SRC=main.cpp operations.cpp
 
 all: debug
 
@@ -14,3 +14,6 @@ debug: $(OBJ)
 
 clean:
 	$(RM) *.o *.exe *.db
+
+shell: $(OBJ)
+	$(CC) $(CFLAGS) -o sqlite3 shell.c $(OBJ)

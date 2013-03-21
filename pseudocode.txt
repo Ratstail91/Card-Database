@@ -28,14 +28,13 @@ New:
 	generate complete dataset
 	card dataset:
 		internal_id
-		name (including caps & punctuation)
+		card_name (including caps & punctuation)
 		mana_cost
 		converted_mana_cost
 		colour
 		power
 		toughness
 		quantity
-		foil_quantity
 		tags
 		notes
 	enter the card into the database
@@ -53,3 +52,31 @@ Delete:
 	search for a card by name or internal id
 	verify with the user that they want to delete this card
 	delete the card
+
+-------------------------
+
+Standards:
+
+card entry:
+	internal_id			-number, primary key
+	card_name			-text, unique
+	mana_cost			-text
+	converted_mana_cost	-number
+	colour				-number
+	power				-number
+	toughness			-number
+	quantity			-number
+--	tags				-??? (foreign key?)
+--	notes				-text
+end
+
+mana_cost is saved as a text string, but parsed into other formats (such as colour and converted_mana_cost) and saved when the card is entered into the database.
+
+colours:
+	white = 1 >> 0
+	blue = 1 >> 1
+	black = 1 >> 2
+	red = 1 >> 3
+	green = 1 >> 4
+
+for now, "tags" and "notes" are ommitted.
