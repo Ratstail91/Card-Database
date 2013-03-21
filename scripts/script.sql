@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS card_list (
 		card_name TEXT UNIQUE ON CONFLICT REPLACE,
 		mana_cost TEXT,
 		converted_mana_cost NUMBER,
-		colour NUMBER,
+		color NUMBER,
 		power NUMBER,
 		toughness NUMBER
 		quantity NUMBER

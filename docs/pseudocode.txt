@@ -14,7 +14,7 @@ Startup:
 Search:
 	request commands (the conditional statements used by "WHERE"?)
 	for each card:
-		list each important field, and colour the mana field...
+		list each important field, and color the mana field...
 
 New:
 	collect data on a certain card
@@ -31,7 +31,7 @@ New:
 		card_name (including caps & punctuation)
 		mana_cost
 		converted_mana_cost
-		colour
+		color
 		power
 		toughness
 		quantity
@@ -62,7 +62,7 @@ card entry:
 	card_name			-text, unique
 	mana_cost			-text
 	converted_mana_cost	-number
-	colour				-number
+	color				-number
 	power				-number
 	toughness			-number
 	quantity			-number
@@ -70,9 +70,9 @@ card entry:
 --	notes				-text
 end
 
-mana_cost is saved as a text string, but parsed into other formats (such as colour and converted_mana_cost) and saved when the card is entered into the database.
+mana_cost is saved as a text string, but parsed into other formats (such as color and converted_mana_cost) and saved when the card is entered into the database.
 
-colours:
+color:
 	white = 1 >> 0
 	blue = 1 >> 1
 	black = 1 >> 2
